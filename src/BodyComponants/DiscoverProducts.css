@@ -1,0 +1,30 @@
+.discover-products {
+    text-align: center;
+    margin-top: 20px; 
+  }
+  
+  .discover-products h1 {
+    font-family: Simplon Norm;
+font-size: 60px;
+font-weight: 400;
+line-height: 72px;
+letter-spacing: 1px;
+/* text-align: center; */
+
+    /* font-size: 36px;  */
+    margin-bottom: 10px;
+  }
+  
+  .discover-products p {
+    /* font-family: Simplon Norm; */
+font-size: 22px;
+font-weight: 400;
+line-height: 40px;
+text-align: center;
+
+
+
+
+    
+  }
+  

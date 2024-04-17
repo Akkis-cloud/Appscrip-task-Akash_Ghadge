@@ -2,11 +2,11 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 10px; /* Adjust spacing as needed */
+    margin-bottom: 10px; 
   }
   
   .sort-by-container label {
-    margin-right: 10px; /* Adjust spacing between label and select */
+    margin-right: 10px;
   }
 
 
@@ -21,9 +21,9 @@
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 20px; /* Gap between grid items */
-    justify-content: center; /* Center align grid items horizontally */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    justify-content: center; 
   }
   
   .product-item {
@@ -31,30 +31,31 @@
     box-sizing: content-box;
     flex-direction: column;
     max-width: 300px;
-    box-sizing: border-box; /* Include padding and borders in total width and height */
+    box-sizing: border-box; 
   }
   
   .product-image {
-    height: 60%; /* 70% height for the product image */
-    overflow: hidden; /* Prevent image overflow */
+    height: 60%; 
+    overflow: hidden; 
   }
   
   .product-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   
   .product-details {
-    height: 30%; /* 30% height for other text */
+    height: 30%; 
     margin-top: 10px;
   }
   
   .product-details strong {
-    display: block; /* Ensure strong tag is a block element */
+    display: block; 
   }
   
   .heart-icon {
     cursor: pointer;
+    /* color: yellow; */
     width: 24px;
     height: 24px;
   }
@@ -65,9 +66,11 @@
     stroke-width: 2;
   }
   
-  .heart-icon.liked path {
-    stroke: yellow; /* Change color to yellow when liked */
-    stroke-opacity: 1; /* Make the heart fully visible */
+  .heart-icon.liked path{
+    /* background-color: red; */
+    color: yellow;
+    stroke: yellow; 
+    stroke-opacity: 1;
   }
   
   .filter-bar {
@@ -85,7 +88,7 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  @media (max-width: 375px){
+  @media (max-width: 450px){
     .product-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

@@ -12,9 +12,11 @@ const ProductList = () => {
     // Fetch products from API
     fetch('https://fakestoreapi.com/products?limit=8')
       .then(response => response.json())
-      .then(data => {setProducts(data);tempsetProducts(data)});
+      .then(data=> {setProducts(data);tempsetProducts(data)});
   }, []); // Run once on component mount
 
+
+  const [isClicked, setIsClicked] = useState(false);
   const handleHeartClick = (productId) => {
     // Update the liked state of the product
     const updatedProducts = products.map(product =>
@@ -58,8 +60,8 @@ const ProductList = () => {
             <label htmlFor="sort-by">Sort By:</label>
             <select id="sort-by" value={sortBy} onChange={handleSortChange}>
               <option value="RECOMMENDED">Recommended</option>
-              <option value="NEWEST">Newest First</option>
-              <option value="POPULAR">Popular</option>
+              {/* <option value="NEWEST">Newest First</option>
+              <option value="POPULAR">Popular</option> */}
               <option value="LOW_HIGH">Price: Low to High</option>
               <option value="HIGH_LOW">Price: High to Low</option>
             </select>
@@ -81,14 +83,15 @@ const ProductList = () => {
               <img src={product.image} alt={product.title} />
             </div>
             <div className="product-details">
-              {/* <strong>{product.title}</strong> */}
+              <strong className='title'>{product.title.slice(0, 10)}...</strong>
               <p>
                 <span className="underline">Sign in</span> or Create an account to see pricing{' '}
+                
                 <span
                   className="heart-icon"
                   onClick={() => handleHeartClick(product.id)}
                 >
-                  &#10084;
+                  &#9825;;
                 </span>
               </p>
             </div>
@@ -100,85 +103,3 @@ const ProductList = () => {
 };
 
 export default ProductList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import FilterBar from './FilterBar'; // Import the FilterBar component
-// import './ProductList.css'; // Import your CSS file for styling
-
-// const ProductList = () => {
-//   const [products, setProducts] = useState([]);
-
-//   useEffect(() => {
-//     // Fetch products from API
-//     fetch('https://fakestoreapi.com/products?limit=5')
-//       .then(response => response.json())
-//       .then(data => setProducts(data));
-//   }, []); // Run once on component mount
-
-//   const handleHeartClick = (productId) => {
-//     // Update the liked state of the product
-//     const updatedProducts = products.map(product =>
-//       product.id === productId ? { ...product, liked: !product.liked } : product
-//     );
-//     setProducts(updatedProducts);
-//   };
-
-//   const handleSortChange = (sortBy) => {
-//     // Sort products based on the selected option
-//     let sortedProducts = [...products];
-//     if (sortBy === 'LOW_HIGH') {
-//       sortedProducts.sort((a, b) => a.price - b.price);
-//     } else if (sortBy === 'HIGH_LOW') {
-//       sortedProducts.sort((a, b) => b.price - a.price);
-//     }
-//     setProducts(sortedProducts);
-//   };
-
-//   return (
-//     <div className="product-list-container">
-//       <FilterBar onSortChange={handleSortChange} />
-//       <div className="filter-panel">Filter Panel Content</div>
-//       <div className="product-grid">
-//         {products.map(product => (
-//           <div className="product-item" key={product.id}>
-//             <div className="product-image">
-//               <img src={product.image} alt={product.title} />
-//             </div>
-//             <div className="product-details">
-//               <strong>{product.title}</strong>
-//               <p>
-//                 <span className="underline">Sign in</span> or Create an account to see pricing{' '}
-//                 <span
-//                   className="heart-icon"
-//                   onClick={() => handleHeartClick(product.id)}
-//                 >
-//                   &#10084;
-//                 </span>
-//               </p>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductList;

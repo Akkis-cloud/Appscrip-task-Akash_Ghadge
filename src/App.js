@@ -8,12 +8,13 @@ import DiscoverProducts from './BodyComponants/DiscoverProducts';
 import ProductList from './BodyComponants/ProductList';
 import Footer from './FooterComponants/Footer';
 
+
 const App=()=>{
   return (
     <>
     <Header></Header>
     <DiscoverProducts></DiscoverProducts>
-    {/* <FilterBar onToggleFilter={handleToggleFilter} /> */}
+    
     <ProductList></ProductList>
     <Footer></Footer>
      </>

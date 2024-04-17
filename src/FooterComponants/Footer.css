@@ -87,7 +87,7 @@ h3 {
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 1080px) {
   .footer-below-line {
     flex-direction: column; 
   }

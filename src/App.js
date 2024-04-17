@@ -14,7 +14,6 @@ const App=()=>{
     <>
     <Header></Header>
     <DiscoverProducts></DiscoverProducts>
-    
     <ProductList></ProductList>
     <Footer></Footer>
      </>
